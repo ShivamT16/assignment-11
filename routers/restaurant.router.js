@@ -3,7 +3,6 @@ const restaurantRouter = express.Router();
 const Restaurant = require("../models/restaurant");
 
 const {
-  seedDataBase,
   createRestaurant,
   readRestaurant,
   readAllRestaurants,

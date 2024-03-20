@@ -1,52 +1,35 @@
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 
 const Restaurant = require("../models/restaurant");
 
-const fs = require("fs");
-const jsonData = fs.readFileSync("restaurant.json", "utf8");
-const restaurantsData = JSON.parse(jsonData);
+// const fs = require("fs");
+// const jsonData = fs.readFileSync("restaurant.json", "utf8");
+// const restaurantsData = JSON.parse(jsonData);
 
-const seedDataBase = async () => {
-  try {
-    for (const restaurantData of restaurantsData) {
-      const newRestaurant = new Restaurant({
-        name: restaurantData.name,
-        cuisine: restaurantData.cuisine,
-        address: restaurantData.address,
-        city: restaurantData.city,
-        rating: restaurantData.rating,
-        menu: restaurantData.menu,
-        averageRating: restaurantData.averageRating,
-      });
+// const seedDataBase = async () => {
+//   try {
+//     for (const restaurantData of restaurantsData) {
+//       const newRestaurant = new Restaurant({
+//         name: restaurantData.name,
+//         cuisine: restaurantData.cuisine,
+//         address: restaurantData.address,
+//         city: restaurantData.city,
+//         rating: restaurantData.rating,
+//         menu: restaurantData.menu,
+//         averageRating: restaurantData.averageRating,
+//       });
 
-      await newRestaurant.save();
-      console.log(`Restaurant "${newRestaurant.name}" seeded.`);
-    }
-    console.log("Database seeding complete.");
-  } catch (error) {
-    console.error("Error seeding database", error);
-  } finally {
-    mongoose.disconnect();
-  }
-};
+//       await newRestaurant.save();
+//       console.log(`Restaurant "${newRestaurant.name}" seeded.`);
+//     }
+//     console.log("Database seeding complete.");
+//   } catch (error) {
+//     console.error("Error seeding database", error);
+//   } finally {
+//     mongoose.disconnect();
+//   }
+// };
 // seedDataBase();
-
-const f = {
-  name: "Hotel",
-  cuisine: "Indian",
-  address: "Shop - 16, Gali Number-2",
-  city: "Navada",
-  rating: 3,
-  menu: [
-    {
-      name: "Maharaja  Thali",
-      price: 250,
-      description: " Veg Thali",
-      isVeg: true,
-    },
-  ],
-  averageRating: 2,
-};
 
 const createRestaurant = async (newRestaurantData) => {
   try {
@@ -243,7 +226,6 @@ const getUserReviewsForRestaurant = async (restaurantId) => {
 // getUserReviewsForRestaurant("65c787ebc899414ddbd03f52");
 
 module.exports = {
-  seedDataBase,
   createRestaurant,
   readRestaurant,
   readAllRestaurants,
