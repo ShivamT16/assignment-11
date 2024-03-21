@@ -1,35 +1,4 @@
-// const mongoose = require("mongoose");
-
 const Restaurant = require("../models/restaurant");
-
-// const fs = require("fs");
-// const jsonData = fs.readFileSync("restaurant.json", "utf8");
-// const restaurantsData = JSON.parse(jsonData);
-
-// const seedDataBase = async () => {
-//   try {
-//     for (const restaurantData of restaurantsData) {
-//       const newRestaurant = new Restaurant({
-//         name: restaurantData.name,
-//         cuisine: restaurantData.cuisine,
-//         address: restaurantData.address,
-//         city: restaurantData.city,
-//         rating: restaurantData.rating,
-//         menu: restaurantData.menu,
-//         averageRating: restaurantData.averageRating,
-//       });
-
-//       await newRestaurant.save();
-//       console.log(`Restaurant "${newRestaurant.name}" seeded.`);
-//     }
-//     console.log("Database seeding complete.");
-//   } catch (error) {
-//     console.error("Error seeding database", error);
-//   } finally {
-//     mongoose.disconnect();
-//   }
-// };
-// seedDataBase();
 
 const createRestaurant = async (newRestaurantData) => {
   try {
@@ -41,7 +10,6 @@ const createRestaurant = async (newRestaurantData) => {
     throw error;
   }
 };
-// createRestaurant(f);
 
 const readRestaurant = async (restaurantName) => {
   try {
@@ -56,7 +24,6 @@ const readRestaurant = async (restaurantName) => {
     throw error;
   }
 };
-// readRestaurant("Hotel ");
 
 const readAllRestaurants = async () => {
   try {
@@ -67,7 +34,6 @@ const readAllRestaurants = async () => {
     throw error;
   }
 };
-// readAllRestaurants();
 
 const readRestaurantsByCuisine = async (cuisineType) => {
   try {
@@ -84,7 +50,6 @@ const readRestaurantsByCuisine = async (cuisineType) => {
     throw error;
   }
 };
-// readRestaurantsByCuisine("Indian");
 
 const updateRestaurant = async (restaurantId, updatedData) => {
   try {
@@ -99,7 +64,6 @@ const updateRestaurant = async (restaurantId, updatedData) => {
     throw error;
   }
 };
-// updateRestaurant("65c787ebc899414ddbd03f52", { rating: 4 });
 
 const deleteRestaurant = async (restaurantId) => {
   try {
@@ -110,7 +74,6 @@ const deleteRestaurant = async (restaurantId) => {
     throw error;
   }
 };
-// deleteRestaurant("65c787efc899414ddbd03f57");
 
 const searchRestaurantByLocation = async (restaurantLocation) => {
   try {
@@ -123,7 +86,6 @@ const searchRestaurantByLocation = async (restaurantLocation) => {
     throw error;
   }
 };
-// searchRestaurantByLocation("Dwarka");
 
 const filterRestaurantByRating = async (restaurantRating) => {
   try {
@@ -136,7 +98,6 @@ const filterRestaurantByRating = async (restaurantRating) => {
     throw error;
   }
 };
-// filterRestaurantByRating(4);
 
 const addDishToMenu = async (restaurantId, menuData) => {
   try {
@@ -151,13 +112,6 @@ const addDishToMenu = async (restaurantId, menuData) => {
     throw error;
   }
 };
-
-// addDishToMenu("65c787ebc899414ddbd03f52", {
-//   name: "Malai Kofta",
-//   price: 150,
-//   description: "delicious",
-//   isVeg: false,
-// });
 
 const removeDishFromMenu = async (restaurantId, dishName) => {
   try {
@@ -174,8 +128,6 @@ const removeDishFromMenu = async (restaurantId, dishName) => {
     throw error;
   }
 };
-
-// removeDishFromMenu("65c787ebc899414ddbd03f52", "Malai Kofta");
 
 const addRestaurantReviewAndRating = async (restaurantId, newReviews) => {
   try {
@@ -204,12 +156,6 @@ const addRestaurantReviewAndRating = async (restaurantId, newReviews) => {
   }
 };
 
-// addRestaurantReviewAndRating("65c787ebc899414ddbd03f52", {
-//   userId: "65c899f2d3a5cec7a482f136",
-//   rating: 0,
-//   reviewText: "",
-// });
-
 const getUserReviewsForRestaurant = async (restaurantId) => {
   try {
     const findRestaurant = await Restaurant.findById(restaurantId).populate(
@@ -222,8 +168,6 @@ const getUserReviewsForRestaurant = async (restaurantId) => {
     throw error;
   }
 };
-
-// getUserReviewsForRestaurant("65c787ebc899414ddbd03f52");
 
 module.exports = {
   createRestaurant,

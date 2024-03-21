@@ -1,5 +1,3 @@
-// const mongoose = require("mongoose");
-
 const User = require("../models/user");
 
 const signup = async (userDetails) => {
@@ -24,13 +22,6 @@ const signup = async (userDetails) => {
     throw error;
   }
 };
-// signup({
-//   username: "Helloworld",
-//   nickname: "hw",
-//   profilePictureUrl: "/example.com",
-//   email: "example@com",
-//   password: "ece",
-// });
 
 const login = async (email, password) => {
   try {
@@ -45,6 +36,5 @@ const login = async (email, password) => {
     throw error;
   }
 };
-// login("example@com", "ece");
 
 module.exports = { signup, login };
