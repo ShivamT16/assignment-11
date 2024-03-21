@@ -40,7 +40,7 @@ const readRestaurantsByCuisine = async (cuisineType) => {
     const restaurantsByCuisine = await Restaurant.find({
       cuisine: cuisineType,
     });
-    if (restaurantsByCuisine.legth > 0) {
+    if (restaurantsByCuisine.length > 0) {
       console.log("cuisine", restaurantsByCuisine);
       return restaurantsByCuisine;
     } else {
