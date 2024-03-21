@@ -9,7 +9,7 @@ require("./db");
 
 app.get("/", (req, res) => {
   res.send(
-    "Welcome to the Restaurant API documentation. The documenation is prepared to provide your restaurant platform a powerful mangement systems with the APIs. It is designed in such a way that developers can easily adapt and use these APIs for various functions such as create, delete, modify and more.",
+    "Welcome to the Restaurant API documentation. The documentation is prepared to provide your restaurant platform with a powerful management system with the APIs. It is designed in such a way that developers can easily adapt and use these APIs for various functions such as create, delete, modify and more.",
   );
 });
 
